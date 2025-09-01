@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Solution - AgriTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Solution Page Specific Styles */
+        .solution-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .solution-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .solution-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .solution-card:hover .solution-image img {
+            transform: scale(1.05);
+        }
+
+        .solution-content {
+            padding: 25px;
+        }
+
+        .solution-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .solution-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .solution-features {
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            color: var(--accent-color);
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+        .solution-cta {
+            text-align: center;
+            margin-top: 30px;
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .solution-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="Images/logo.png" alt="AgriTech Logo">
+                <h1>AgriTech</h1>
+            </div>
+            <nav>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="problem.html">Problem</a></li>
+                    <li><a href="framework.html">Framework</a></li>
+                    <li><a href="solution.html" class="active">Solution</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="involved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Solutions</h1>
+            <p>Innovative approaches to overcoming food security challenges</p>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="container">
+            <div class="solution-intro">
+                <p>Our comprehensive approach addresses the key barriers to food security through innovative, sustainable, and community-driven solutions. Here's how we're making a difference:</p>
+            </div>
+
+            <!-- Water Solutions -->
+            <div class="solution-cards">
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="Images/water.png" alt="Water Conservation">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Water Conservation</h3>
+                        <p>Addressing water scarcity through innovative water management techniques that maximize efficiency and sustainability.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-item">
+                               
+                                <div class="feature-text">
+                                    <strong>Drip Irrigation:</strong> Delivering water directly to plant roots with minimal waste
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                               
+                                <div class="feature-text">
+                                    <strong>Rainwater Harvesting:</strong> Collecting and storing rainwater for dry periods
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                               
+                                <div class="feature-text">
+                                    <strong>Mulching:</strong> Reducing evaporation and maintaining soil moisture
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Knowledge Solutions -->
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="Images/education.png" alt="Education & Training">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Education & Training</h3>
+                        <p>Bridging the knowledge gap through comprehensive training programs and community workshops.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-item">
+                               
+                                <div class="feature-text">
+                                    <strong>Workshops:</strong> Hands-on training in sustainable farming techniques
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                              
+                                <div class="feature-text">
+                                    <strong>Mentorship:</strong> Pairing new gardeners with experienced mentors
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                              
+                                <div class="feature-text">
+                                    <strong>Resource Materials:</strong> Providing accessible guides and manuals
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Space Solutions -->
+                <div class="solution-card">
+                    <div class="solution-image">
+                        <img src="Images/space.png" alt="Space Optimization">
+                    </div>
+                    <div class="solution-content">
+                        <h3> Space Optimization</h3>
+                        <p>Maximizing limited spaces through innovative gardening techniques and community collaboration.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-item">
+                             
+                                <div class="feature-text">
+                                    <strong>Vertical Gardens:</strong> Growing upwards to save space
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                              
+                                <div class="feature-text">
+                                    <strong>Container Gardening:</strong> Using pots and containers for small spaces
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                               
+                                <div class="feature-text">
+                                    <strong>Community Plots:</strong> Shared gardening spaces for urban areas
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact Section -->
+            <div class="impact-section">
+                <h2>Our Impact</h2>
+                <p>Through these solutions, we're making measurable progress in improving food security in South African communities:</p>
+                
+                <div class="impact-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Reduction in water usage with drip irrigation</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Community members trained in sustainable agriculture</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Households with improved food security</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">Increase in vegetable production per square meter</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Be Part of the Solution</h2>
+            <p>Join us in implementing these solutions and creating sustainable food security in our communities.</p>
+            <a href="involved.html" class="btn btn-secondary">Get Involved</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Images/logo.png" alt="AgriTech Logo">
+                    <h3>AgriTech</h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">The Problem</a></li>
+                        <li><a href="framework.html">Our Framework</a></li>
+                        <li><a href="solution.html">The Solution</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@AgriTech.org.za</p>
+                    <p><i class="fas fa-university"></i> Tshwane University of Technology, Polokwane Campus</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgriTech. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Findings - AgriTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Research Page Specific Styles */
+        .research-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .research-section {
+            margin-bottom: 60px;
+        }
+
+        .research-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .research-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .research-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .research-meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 0 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .meta-item {
+            margin-right: 25px;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .meta-item i {
+            margin-right: 5px;
+            color: var(--accent-color);
+        }
+
+        .research-abstract {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .research-download {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .research-download:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+
+        .research-download i {
+            margin-right: 8px;
+        }
+
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .finding-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .finding-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .finding-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .finding-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .finding-meta i {
+            margin-right: 5px;
+            color: var(--accent-color);
+        }
+
+        .methodology-section {
+            background-color: var(--light-color);
+            padding: 50px 0;
+            margin: 60px 0;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .methodology-step {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            padding-left: 70px;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .methodology-step h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        @media (max-width: 768px) {
+            .research-meta {
+                flex-direction: column;
+            }
+            
+            .meta-item {
+                margin-bottom: 8px;
+            }
+            
+            .findings-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="Images/logo.png" alt="AgriTech Logo">
+                <h1>AgriTech</h1>
+            </div>
+            <nav>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="problem.html">Problem</a></li>
+                    <li><a href="framework.html">Framework</a></li>
+                    <li><a href="solution.html">Solution</a></li>
+                    <li><a href="research.html" class="active">Research</a></li>
+                    <li><a href="involved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Research & Findings</h1>
+            <p>Evidence-based insights into sustainable food security solutions</p>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="research-section">
+        <div class="container">
+            <div class="research-intro">
+                <p>Our research focuses on identifying effective strategies to overcome the barriers to food security in South African communities. Below you'll find our latest research papers, findings, and methodologies.</p>
+            </div>
+
+            <!-- Featured Research -->
+            <div class="research-card">
+                <h3><i class="fas fa-file-alt research-icon"></i> Sustainable Food Production in Semi-Urban South Africa</h3>
+                
+                <div class="research-meta">
+                    <div class="meta-item"><i class="fas fa-calendar-alt"></i> Published: June 2025</div>
+                    <div class="meta-item"><i class="fas fa-user"></i> Lead Researcher: Dr. Thandi Nkosi</div>
+                    <div class="meta-item"><i class="fas fa-tags"></i> Categories: Agriculture, Sustainability, Community Development</div>
+                </div>
+                
+                <div class="research-abstract">
+                    <p>This comprehensive study examines the effectiveness of various sustainable farming techniques in semi-urban South African communities, with a focus on water conservation, space optimization, and knowledge transfer. The research was conducted over 24 months across 15 communities in Limpopo Province, involving over 200 participants.</p>
+                    
+                    <h4>Key Findings:</h4>
+                    <ul>
+                        <li>Drip irrigation systems reduced water usage by 65% compared to traditional watering methods</li>
+                        <li>Vertical gardening increased yield per square meter by 120%</li>
+                        <li>Community knowledge-sharing programs improved crop success rates by 78%</li>
+                        <li>Combined approaches led to a 45% increase in household food security</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="research-download"><i class="fas fa-download"></i> Download Full Research Paper (PDF)</a>
+            </div>
+
+            <!-- Research Findings -->
+            <div class="research-section">
+                <h2>Key Findings</h2>
+                
+                <div class="findings-grid">
+                    <div class="finding-card">
+                        <div class="finding-meta"><i class="fas fa-tint"></i> Water Conservation</div>
+                        <h4>Efficient Irrigation Methods</h4>
+                        <p>Our research shows that implementing drip irrigation systems can reduce water usage by up to 65% while maintaining or increasing crop yields.</p>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <div class="finding-meta"><i class="fas fa-graduation-cap"></i> Education Impact</div>
+                        <h4>Knowledge Transfer Success</h4>
+                        <p>Communities with access to training programs showed a 78% higher success rate in establishing productive gardens compared to control groups.</p>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <div class="finding-meta"><i class="fas fa-vector-square"></i> Space Utilization</div>
+                        <h4>Vertical Farming Results</h4>
+                        <p>Vertical gardening techniques increased production per square meter by 120%, making it ideal for urban environments with limited space.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Methodology -->
+            <div class="methodology-section">
+                <div class="container">
+                    <h2>Research Methodology</h2>
+                    <p>Our research follows a rigorous, multi-phase approach to ensure reliable and actionable results:</p>
+                    
+                    <div class="methodology-grid">
+                        <div class="methodology-step">
+                            <div class="step-number">1</div>
+                            <h4>Needs Assessment</h4>
+                            <p>Comprehensive surveys and interviews to identify community needs and existing challenges.</p>
+                        </div>
+                        
+                        <div class="methodology-step">
+                            <div class="step-number">2</div>
+                            <4>Pilot Programs</h4>
+                            <p>Implementation of small-scale pilot programs to test different approaches and gather initial data.</p>
+                        </div>
+                        
+                        <div class="methodology-step">
+                            <div class="step-number">3</div>
+                            <h4>Data Collection</h4>
+                            <p>Systematic collection of quantitative and qualitative data throughout the implementation phase.</p>
+                        </div>
+                        
+                        <div class="methodology-step">
+                            <div class="step-number">4</div>
+                            <h4>Analysis & Reporting</h4>
+                            <p>Thorough analysis of results and preparation of comprehensive reports and recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="research-section">
+                <h2>Additional Resources</h2>
+                
+                <div class="findings-grid">
+                    <div class="finding-card">
+                        <h4>Community Training Manual</h4>
+                        <p>A comprehensive guide to sustainable gardening practices for community leaders and participants.</p>
+                        <a href="#" class="research-download" style="display: inline-block; margin-top: 10px;"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h4>Case Study: Limpopo Success Story</h4>
+                        <p>Detailed examination of our most successful community garden project to date.</p>
+                        <a href="#" class="research-download" style="display: inline-block; margin-top: 10px;"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h4>Policy Recommendations</h4>
+                        <p>Evidence-based suggestions for policymakers to support community food security initiatives.</p>
+                        <a href="#" class="research-download" style="display: inline-block; margin-top: 10px;"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Join Our Research Network</h2>
+            <p>Be part of our ongoing research and help shape the future of sustainable food security in South Africa.</p>
+            <a href="involved.html" class="btn btn-secondary">Get Involved</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Images/logo.png" alt="AgriTech Logo">
+                    <h3>AgriTech</h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">The Problem</a></li>
+                        <li><a href="framework.html">Our Framework</a></li>
+                        <li><a href="solution.html">The Solution</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@AgriTech.org.za</p>
+                    <p><i class="fas fa-university"></i> Tshwane University of Technology, Polokwane Campus</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgriTech. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

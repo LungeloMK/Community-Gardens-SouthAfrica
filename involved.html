@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved - AgriTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Get Involved Page Specific Styles */
+        .involved-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .ways-to-help {
+            margin-bottom: 60px;
+        }
+
+        .help-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .help-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .help-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .help-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .help-card:hover .help-image img {
+            transform: scale(1.05);
+        }
+
+        .help-content {
+            padding: 25px;
+        }
+
+        .help-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .help-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .help-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .help-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .help-link:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+
+        .volunteer-form {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-submit {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #f57c00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .partners-section {
+            background-color: var(--light-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .partner-logo {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover img {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .volunteer-form {
+                padding: 25px;
+            }
+            
+            .help-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="Images/logo.png" alt="AgriTech Logo">
+                <h1>AgriTech</h1>
+            </div>
+            <nav>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="problem.html">Problem</a></li>
+                    <li><a href="framework.html">Framework</a></li>
+                    <li><a href="solution.html">Solution</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="involved.html" class="active">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get Involved</h1>
+            <p>Join us in creating sustainable food security in South Africa</p>
+        </div>
+    </section>
+
+    <!-- Ways to Help Section -->
+    <section class="ways-to-help">
+        <div class="container">
+            <div class="involved-intro">
+                <h2>How You Can Help</h2>
+                <p>There are many ways to support our mission of creating sustainable food security in South African communities. Whether you're an individual, organization, or business, your contribution makes a difference.</p>
+            </div>
+
+            <div class="help-cards">
+                <!-- Volunteer Card -->
+                <div class="help-card">
+                    <div class="help-image">
+                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Volunteer">
+                    </div>
+                    <div class="help-content">
+                        <h3><i class="fas fa-hands-helping help-icon"></i> Volunteer</h3>
+                        <p>Join our team of dedicated volunteers and contribute your time and skills to our community projects.</p>
+                        <a href="#volunteer" class="help-link">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Donate Card -->
+                <div class="help-card">
+                    <div class="help-image">
+                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Donate">
+                    </div>
+                    <div class="help-content">
+                        <h3><i class="fas fa-donate help-icon"></i> Donate</h3>
+                        <p>Your financial support helps us expand our programs and reach more communities in need.</p>
+                        <a href="#donate" class="help-link">Donate Now</a>
+                    </div>
+                </div>
+
+                <!-- Partner Card -->
+                <div class="help-card">
+                    <div class="help-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Partner">
+                    </div>
+                    <div class="help-content">
+                        <h3><i class="fas fa-handshake help-icon"></i> Partner</h3>
+                        <p>Businesses and organizations can partner with us to create meaningful impact at scale.</p>
+                        <a href="#partner" class="help-link">Partner With Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Form Section -->
+    <section id="volunteer" class="volunteer-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Become a Volunteer</h2>
+                <p>Join our team and make a difference in your community</p>
+            </div>
+
+            <form class="volunteer-form" id="volunteerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Skills & Experience *</label>
+                    <textarea id="skills" class="form-control" required placeholder="Please tell us about your skills, experience, and how you'd like to help..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Availability *</label>
+                    <select id="availability" class="form-control" required>
+                        <option value="" disabled selected>Select your availability</option>
+                        <option value="weekdays">Weekdays</option>
+                        <option value="weekends">Weekends</option>
+                        <option value="evenings">Evenings</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="donation-section" style="background-color: var(--light-color); padding: 60px 0;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h2>Make a Donation</h2>
+                <p>Your contribution helps us expand our programs and reach more communities</p>
+            </div>
+
+            <div class="donation-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                <div class="donation-option" style="background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--primary-color);">R250</h3>
+                    <p>Provides seeds and tools for one household garden</p>
+                    <button class="btn-submit" style="margin-top: 15px; width: 100%;">Donate R250</button>
+                </div>
+                <div class="donation-option" style="background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--primary-color);">R500</h3>
+                    <p>Supports a week of training for a community member</p>
+                    <button class="btn-submit" style="margin-top: 15px; width: 100%;">Donate R500</button>
+                </div>
+                <div class="donation-option" style="background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--primary-color);">R1,000+</h3>
+                    <p>Helps establish a new community garden</p>
+                    <button class="btn-submit" style="margin-top: 15px; width: 100%;">Donate Custom Amount</button>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <p>For bank transfers or other donation methods, please contact us at <a href="mailto:donate@growsecure.org.za" style="color: var(--primary-color);">donate@growsecure.org.za</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partner" class="partners-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h2>Our Partners</h2>
+                <p>We're proud to collaborate with these organizations to create lasting impact</p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=TUT" alt="Tshwane University of Technology">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Agriculture+SA" alt="Department of Agriculture">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Green+Future" alt="Green Future Foundation">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=Community+First" alt="Community First Initiative">
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <h3>Become a Corporate Partner</h3>
+                <p>Join our network of corporate partners and demonstrate your commitment to sustainable development.</p>
+                <a href="contact.html" class="btn-submit" style="display: inline-block; margin-top: 20px; text-decoration: none;">Contact Us About Partnership</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Images/logo.png" alt="AgriTech Logo">
+                    <h3>AgriTech</h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">The Problem</a></li>
+                        <li><a href="framework.html">Our Framework</a></li>
+                        <li><a href="solution.html">The Solution</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@AgriTech.org.za</p>
+                    <p><i class="fas fa-university"></i> Tshwane University of Technology, Polokwane Campus</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgriTech. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Form submission handling
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            
+            // Show success message
+            alert(`Thank you, ${firstName} ${lastName}! We've received your volunteer application and will be in touch soon.`);
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Add click handlers for donation buttons
+        document.querySelectorAll('.donation-option button').forEach(button => {
+            button.addEventListener('click', function() {
+                const amount = this.parentElement.querySelector('h3').textContent;
+                alert(`Thank you for choosing to donate ${amount}. You will be redirected to our secure payment gateway.`);
+                // In a real implementation, this would redirect to a payment processor
+            });
+        });
+    </script>
+</body>
+</html>
